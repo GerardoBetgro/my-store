@@ -1,0 +1,20 @@
+.card{
+    margin: 5px;
+    min-height: 180px;
+    min-width: 400px;
+    max-width: 400px;
+    height: 100%;
+}
+
+.title{
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.content{
+    padding: 0px 10px;
+}
+
+button{
+    width: 100%;
+}
