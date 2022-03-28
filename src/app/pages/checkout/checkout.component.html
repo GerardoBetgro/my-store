@@ -1,19 +1,18 @@
 <div class="container">
-    <form class="form item" (ngSubmit)="onSubmit()" #checkoutForm="ngForm">
+    <form class="form item" #checkoutForm="ngForm">
         <mat-form-field class="form__element">
             <input matInput placeholder="Name" required [(ngModel)]="model.name" name="name" #name="ngModel">
             <mat-error *ngIf="!name.valid || name.pristine">
                 Name is required
             </mat-error>
         </mat-form-field>
-        {{isDelivery}} - Is it delivery?
         <mat-radio-group class="form__element">
             <p>Choose an option:</p>
-            <mat-radio-button value="pickup" (change)="onPickupOrDelivery(false)" checked>
-                Pickup
-            </mat-radio-button>
-            <mat-radio-button value="delivery" (change)="onPickupOrDelivery(true)">
+            <mat-radio-button value="delivery" (change)="onPickupOrDelivery(true)" checked>
                 Delivery
+            </mat-radio-button>
+            <mat-radio-button value="pickup" (change)="onPickupOrDelivery(false)">
+                Pickup
             </mat-radio-button>
         </mat-radio-group>
 
@@ -42,7 +41,7 @@
 </div>
 <app-details></app-details>
 <div class="container__button">
-    <button [disabled]="!checkoutForm.form.valid" mat-raised-button color="primary" type="submit">
+    <button [disabled]="!checkoutForm.form.valid" mat-raised-button color="primary" type="submit" (click)="onSubmit(checkoutForm)">
         Checkout
     </button>
 </div>

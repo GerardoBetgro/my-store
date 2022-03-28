@@ -17,7 +17,6 @@ import { ShoppingCartService } from "src/app/pages/products/services/shopping-ca
     styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-    cart$ = this.shoppingCartSvc.cartAction$;
     total$ = this.shoppingCartSvc.totalAction$;
     quantity$ = this.shoppingCartSvc.quantityAction$;
 
